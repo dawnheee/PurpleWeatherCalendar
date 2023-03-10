@@ -28,10 +28,11 @@ module.exports = {
       2,
       { namedComponents: ['arrow-function', 'function-declaration'] },
     ],
+
     'no-plusplus': 'off',
     'no-console': 'off',
     'react/prop-types': ['off'], // props의 타입체크를 처리에 proptypes가 아닌 typescript 사용 예정
-    'react/jsx-props-no-spreading': ['warn'], // props로 받은 것 바로 props로 넘기기 허용
+    'react/jsx-props-no-spreading': ['off'], // props로 받은 것 바로 props로 넘기기 허용
     'linebreak-style': 0,
     'import/prefer-default-export': 0,
     'import/extensions': 0,

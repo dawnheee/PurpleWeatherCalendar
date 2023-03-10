@@ -31,3 +31,14 @@ export interface DailyConclusion {
 }
 export type MonthlyConclusion = DailyConclusion[]; // 월의 모든 날짜 todo 상태 배열
 // [{date: '324234234', isComplete: 0}, {date: '32433333234', isComplete: 1}, ...]
+
+export interface WeatherInfo {
+  nowTemp?: NowTemp;
+  realFeelTemp?: string;
+  iconNum?: number;
+  describe?: string;
+  maxTemp?: number;
+  minTemp?: number;
+}
+
+export type NowTemp = number | null;
