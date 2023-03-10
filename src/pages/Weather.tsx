@@ -16,6 +16,7 @@ function Weather() {
       Weather
       <WeatherCard {...weatherInfo} />
       <Clothes {...weatherInfo} />
+      {/* <WeatherIcon name="day-sleet-storm" /> */}
     </div>
   );
 }
