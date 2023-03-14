@@ -1,4 +1,4 @@
-import { instance } from 'apis/instance';
+import { instance } from '../instance';
 // import type { TodoId, Todos } from '../../types';
 
 export async function getTodo() {

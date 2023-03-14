@@ -1,4 +1,3 @@
-import React from 'react';
 import WeatherCard from 'components/weather/WeatherCard';
 import Clothes from 'components/weather/Clothes';
 import useWeather from 'components/weather/utils/useWeather';

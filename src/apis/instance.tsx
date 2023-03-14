@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const config = {
-  baseURL: 'http://localhost:8080',
+  baseURL: 'https://www.googleapis.com/calendar/v3/calendars/',
 };
 export const instance = axios.create(config);
 
