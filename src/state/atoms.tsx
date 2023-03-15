@@ -11,3 +11,9 @@ export const loginState = atom<object>({
   },
   effects_UNSTABLE: [persistAtom],
 });
+
+export const selectedDateAtom = atom<any>({
+  key: 'selectedDateAtom',
+  default: { start: '' },
+  effects_UNSTABLE: [persistAtom],
+});

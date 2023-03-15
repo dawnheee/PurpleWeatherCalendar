@@ -1,5 +1,7 @@
-import React from 'react';
+import { useRecoilValue } from 'recoil';
+import { selectedDateAtom } from 'state/atoms';
+import dayjs from 'dayjs';
 
-export function FncreteEvent() {
-  return <div>FncreteEvent</div>;
-}
+const day = dayjs(useRecoilValue(selectedDateAtom));
+export const timeMin = day.format('YYYY-MM-DDTHH:mm:ss');
+export const timeMax = day.endOf('day').format('YYYY-MM-DDTHH:mm:ss');

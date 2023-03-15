@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CalendarReact from '@fullcalendar/react'; // fullCalendar
 import dayGridPlugin from '@fullcalendar/daygrid';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 import interactionPlugin from '@fullcalendar/interaction'; // for selectable
+import { useSetRecoilState } from 'recoil';
+import { selectedDateAtom } from 'state/atoms';
+import CalendarModal from './CalendarModal';
 
 export default function GoogleCalendar() {
-  const handleDateSelect = (arg: {}) => {
-    console.log('date:', arg);
+  const [isOpen, setIsOpen] = useState(false);
+  const setDate = useSetRecoilState(selectedDateAtom);
+
+  const handleDateSelect = (arg: any) => {
+    setDate(arg.startStr);
+    setIsOpen(true);
   };
 
   return (
@@ -25,6 +32,7 @@ export default function GoogleCalendar() {
         height="600px"
         select={handleDateSelect}
       />
+      <CalendarModal isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 }

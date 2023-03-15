@@ -6,7 +6,7 @@ async function getMaxMin(): Promise<WeatherInfo> {
   let minTemp = 0;
   try {
     const response = await axios.get(
-      `http://dataservice.accuweather.com/forecasts/v1/daily/1day/223650?apikey=a94snV6PFLOH7p26aNJtVSYsA0zmje5r&language=ko-kr&metric=true`,
+      `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${process.env.REACT_APP_WEATHER_CITY_KEY}?apikey=${process.env.REACT_APP_WEATHER_API_KEY}&language=ko-kr&metric=true`,
     );
     maxTemp = response.data.DailyForecasts[0].Temperature.Maximum.Value;
     minTemp = response.data.DailyForecasts[0].Temperature.Minimum.Value;

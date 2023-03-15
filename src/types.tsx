@@ -42,3 +42,48 @@ export interface WeatherInfo {
 }
 
 export type NowTemp = number | null;
+
+export type DateTime = string;
+export type TimeZone = 'Asia/Seoul';
+export interface StartEnd {
+  dateTime: DateTime;
+  timeZone: TimeZone;
+}
+export interface Event {
+  summary: string;
+  start: StartEnd;
+  end: StartEnd;
+}
+
+export type SelectedDate = DateTime;
+
+export interface GoogleEventItem {
+  created: string;
+  creator: object;
+  end: StartEnd;
+  etag: string;
+  eventType: string;
+  htmlLink: string;
+  iCalUID: string;
+  id: string;
+  kind: string;
+  organizer: object;
+  reminders: object;
+  sequence: number;
+  start: StartEnd;
+  status: string;
+  summary: string;
+  updated: string;
+}
+
+export interface GoogleEvents {
+  kind: string;
+  etag: string;
+  summary: string;
+  updated: string;
+  timeZone: string;
+  accessRole: string;
+  defaultReminders: object[];
+  nextSyncToken: string;
+  items: GoogleEventItem[];
+}

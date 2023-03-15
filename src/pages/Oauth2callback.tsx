@@ -5,8 +5,6 @@ import { useNavigate } from 'react-router-dom';
 function Oauth2callback() {
   const navigate = useNavigate();
 
-  const CLIENT_SECRET = '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'; // 환경변수 적용 필요
-
   useEffect(() => {
     const fetchData = () => {
       const url = new URL(window.location.href);
@@ -20,7 +18,7 @@ function Oauth2callback() {
             {
               code,
               client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
-              client_secret: CLIENT_SECRET,
+              client_secret: process.env.REACT_APP_GOOGLE_SECRETE,
               redirect_uri: 'http://localhost:3000/oauth2callback',
               grant_type: 'authorization_code',
             },

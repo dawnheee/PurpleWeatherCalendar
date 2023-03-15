@@ -20,3 +20,8 @@
   },
   "include": ["./src/", "todos.tsx", "unuse/types.tsx", "unuse/calendarStatic", "unuse/Calendar"]
 }
+
+
+// "noImplicitAny": true,
+// "noImplicitThis": true,
+// "strictNullChecks": true

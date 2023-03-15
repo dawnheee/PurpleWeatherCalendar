@@ -1,6 +1,6 @@
-import WeatherCard from 'components/weather/WeatherCard';
-import Clothes from 'components/weather/Clothes';
-import useWeather from 'components/weather/utils/useWeather';
+import WeatherCard from 'components/Weather/WeatherCard';
+import Clothes from 'components/Weather/Clothes';
+import useWeather from 'components/Weather/utils/useWeather';
 import { WeatherInfo } from '../types';
 
 function Weather() {
@@ -15,7 +15,6 @@ function Weather() {
       Weather
       <WeatherCard {...weatherInfo} />
       <Clothes {...weatherInfo} />
-      {/* <WeatherIcon name="day-sleet-storm" /> */}
     </div>
   );
 }
