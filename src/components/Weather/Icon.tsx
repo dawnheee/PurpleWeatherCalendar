@@ -6,16 +6,10 @@ function Icon(props: { iconNum: number | undefined }) {
   const className = useIcons(iconNum);
 
   return (
-    <div>
-      아이콘
-      <div className="weather-icon">
-        <i
-          className={`wi wi-${className}`}
-          style={{ color: 'red', fontSize: 50 }}
-        />
-        {className && <div>{className}</div>}
-      </div>
-    </div>
+    <i
+      className={`wi wi-${className}`}
+      style={{ color: '#7A8EF1', fontSize: 90 }}
+    />
   );
 }
 

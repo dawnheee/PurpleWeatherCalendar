@@ -4,12 +4,12 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 import interactionPlugin from '@fullcalendar/interaction'; // for selectable
 import { useSetRecoilState } from 'recoil';
-import { selectedDateAtom } from 'state/atoms';
-import CalendarModal from './CalendarModal';
+import { selectedDateAtom, modalAtom } from 'state/atoms';
+import styled from '@emotion/styled';
 
 export default function GoogleCalendar() {
-  const [isOpen, setIsOpen] = useState(false);
   const setDate = useSetRecoilState(selectedDateAtom);
+  const setIsOpen = useSetRecoilState(modalAtom);
 
   const handleDateSelect = (arg: any) => {
     setDate(arg.startStr);
@@ -17,7 +17,7 @@ export default function GoogleCalendar() {
   };
 
   return (
-    <div className="cal-container">
+    <CalendarContainer>
       <CalendarReact
         plugins={[interactionPlugin, dayGridPlugin, googleCalendarPlugin]}
         initialView="dayGridMonth"
@@ -29,10 +29,15 @@ export default function GoogleCalendar() {
         eventDisplay="block"
         eventTextColor="white"
         eventColor="mustard"
-        height="600px"
+        height="650px"
         select={handleDateSelect}
       />
-      <CalendarModal isOpen={isOpen} setIsOpen={setIsOpen} />
-    </div>
+    </CalendarContainer>
   );
 }
+
+const CalendarContainer = styled('div')`
+  background-color: #ffffffa7;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+`;

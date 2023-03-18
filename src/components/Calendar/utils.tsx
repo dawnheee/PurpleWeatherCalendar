@@ -1,7 +1,6 @@
-import { useRecoilValue } from 'recoil';
-import { selectedDateAtom } from 'state/atoms';
 import dayjs from 'dayjs';
+import 'dayjs/locale/ko';
 
-const day = dayjs(useRecoilValue(selectedDateAtom));
-export const timeMin = day.format('YYYY-MM-DDTHH:mm:ss');
-export const timeMax = day.endOf('day').format('YYYY-MM-DDTHH:mm:ss');
+export const convertDateForm = (dateTime: string) => {
+  return dayjs(dateTime).locale('ko').format('MM.DD HH:mm');
+};

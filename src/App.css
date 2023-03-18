@@ -1,23 +1,29 @@
-.background-container {
-    background-image: linear-gradient(#FDB298, #B176FE);
-    width: 100%;
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+body {
+    background-color: #7A8EF1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    font-family: 'DungGeunMo', sans-serif;
+  }
 
-.calendar-container {
-    width: 55%;
-    margin: auto;
-    position: relative;
-    top: -500px;
-    padding-top: 200px;
-}
+  button {
+    font-family: 'DungGeunMo', sans-serif;
 
-.weekdays-container{
-    display: flex;
-    margin: auto;
-    justify-content: space-around;
-    background-color: white;
-}
-
-.weekdays-container .week-day {
-    color: #808080;
-}
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    width: auto;
+  border: 3px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40%;
+  }
+  button:hover {
+    background-color: inherit;
+  }

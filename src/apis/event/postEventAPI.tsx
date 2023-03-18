@@ -1,18 +1,8 @@
-import axios from 'axios';
+import { EventInstance } from 'apis/Eventinstance';
 import { Event } from '../../types';
 
-const headers = {
-  Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-  'Content-Type': 'application/json',
-};
-
 function postEventAPI(body: Event) {
-  axios
-    .post(
-      `https://www.googleapis.com/calendar/v3/calendars/${process.env.REACT_APP_GOOGLE_CALENDAR_ID}/events`,
-      body,
-      { headers },
-    )
+  EventInstance.post(`/`, body)
     .then((response) => {
       console.log(response);
     })

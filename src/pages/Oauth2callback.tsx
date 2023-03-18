@@ -29,8 +29,12 @@ function Oauth2callback() {
             },
           )
           .then((response) => {
+            console.log(response);
             const accessToken = response.data.access_token;
+            const refreshToken = response.data.refresh_token;
+
             localStorage.setItem('access_token', accessToken);
+            localStorage.setItem('refresh_token', refreshToken);
             axios
               .get('https://www.googleapis.com/oauth2/v1/userinfo', {
                 headers: {
@@ -38,8 +42,11 @@ function Oauth2callback() {
                 },
               })
               .then((response) => {
-                localStorage.setItem('data', JSON.stringify(response.data));
-                navigate('/calendar'); // 토큰 저장 후 메인 페이지로 보냄
+                localStorage.setItem(
+                  'loginData',
+                  JSON.stringify(response.data),
+                );
+                navigate('/'); // 토큰 저장 후 메인 페이지로 보냄
               })
               .catch((error) => console.log(error));
           })

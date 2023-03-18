@@ -17,3 +17,8 @@ export const selectedDateAtom = atom<any>({
   default: { start: '' },
   effects_UNSTABLE: [persistAtom],
 });
+
+export const modalAtom = atom<boolean>({
+  key: 'isOpen',
+  default: false,
+});

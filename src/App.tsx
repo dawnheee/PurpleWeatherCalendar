@@ -4,9 +4,9 @@ import Calendar from 'pages/Calendar';
 import Weather from 'pages/Weather';
 import Oauth2callback from 'pages/Oauth2callback';
 import GoogleOauth from 'pages/GoogleOauth';
-import PostEvent from 'pages/PostEvent';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
 import { blueGrey } from '@mui/material/colors';
+import Main from 'pages/Main';
 
 const theme = createTheme({
   palette: {
@@ -14,17 +14,26 @@ const theme = createTheme({
   },
 });
 
+const CenteredApp = styled('div')({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  minHeight: '100vh',
+});
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/oauth" element={<GoogleOauth />} />
-          <Route path="/event" element={<PostEvent />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/weather" element={<Weather />} />
-          <Route path="/oauth2callback" element={<Oauth2callback />} />
-        </Routes>
+        <CenteredApp>
+          <Routes>
+            <Route path="/oauth" element={<GoogleOauth />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/weather" element={<Weather />} />
+            <Route path="/" element={<Main />} />
+            <Route path="/oauth2callback" element={<Oauth2callback />} />
+          </Routes>
+        </CenteredApp>
       </BrowserRouter>
     </ThemeProvider>
   );

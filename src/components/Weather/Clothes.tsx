@@ -9,6 +9,7 @@ function Clothes(props: WeatherInfo) {
   return (
     <>
       <div>지금 날씨에는... </div>
+      <br />
       <div>{recommendation}</div>
     </>
   );

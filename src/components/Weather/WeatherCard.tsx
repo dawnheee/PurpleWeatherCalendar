@@ -1,21 +1,41 @@
 import Icon from 'components/Weather/Icon';
+import styled from '@emotion/styled';
 import { WeatherInfo } from '../../types';
 
 function WeatherCard(props: WeatherInfo) {
   const { nowTemp, realFeelTemp, iconNum, describe, maxTemp, minTemp } = props;
-  // WeatherInfo 인터페이스의 속성들을 직접 사용할 수 있습니다.
 
   return (
-    <div>
-      <p>현재 온도: {nowTemp}</p>
-      <p>체감 온도: {realFeelTemp}</p>
-      <p>아이콘 번호: {iconNum}</p>
-      <p>날씨 설명: {describe}</p>
-      <p>최고 온도: {maxTemp}</p>
-      <p>최저 온도: {minTemp}</p>
+    <WeatherCardContainer>
       <Icon iconNum={iconNum} />
-    </div>
+      <p className="now">{nowTemp}</p>
+      <p className="describe">{describe}</p>
+
+      <Tempature>
+        <p className="real">체감 온도: {realFeelTemp}</p>
+        <p className="min">최고 온도: {minTemp}</p>
+        <p className="max">최저 온도: {maxTemp}</p>
+      </Tempature>
+    </WeatherCardContainer>
   );
 }
 
 export default WeatherCard;
+
+const WeatherCardContainer = styled('section')`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  .now {
+    font-size: 40px;
+    position: relative;
+    margin-top: 10px;
+  }
+  .describe {
+    margin-top: -20px;
+  }
+`;
+
+const Tempature = styled('section')``;

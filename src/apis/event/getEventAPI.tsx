@@ -1,36 +1,21 @@
-import axios from 'axios';
 import dayjs from 'dayjs';
+import { GoogleEvents } from 'types';
+import { EventInstance } from '../Eventinstance';
 
-interface EventData {
-  kind: string;
-  etag: string;
-  summary: string;
-  updated: string;
-  timeZone: string;
-  items: object[];
-}
-
-const headers = {
-  Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-  'Content-Type': 'application/json',
-};
-
-async function getEventAPI(selectedDateAtom: string): Promise<EventData> {
+async function getEventAPI(selectedDateAtom: string): Promise<GoogleEvents> {
   const day = dayjs(selectedDateAtom);
   const timeMin = day.toISOString();
   const timeMax = day.endOf('day').toISOString();
   const params = {
     timeMin,
     timeMax,
+    orderBy: 'startTime',
+    singleEvents: true,
   };
   try {
-    const response = await axios.get(
-      `https://www.googleapis.com/calendar/v3/calendars/${process.env.REACT_APP_GOOGLE_CALENDAR_ID}/events`,
-      {
-        headers,
-        params,
-      },
-    );
+    const response = await EventInstance.get('/', {
+      params,
+    });
     return response.data;
   } catch (error) {
     console.log(error);
