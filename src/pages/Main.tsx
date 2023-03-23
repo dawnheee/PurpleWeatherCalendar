@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import LoginModal from 'components/share/LoginModal';
+import LogoutButton from 'components/Auth/AuthButton';
+import { useRecoilValue } from 'recoil';
 import Calendar from './Calendar';
 import Weather from './Weather';
 import Modal from '../components/share/Modal';
+import { isLoginAtom } from '../state/atoms';
 
 function Main() {
-  const [isOpen, setIsOpen] = useState(false); // 전역 리코일 상태랑 공유하지 않음
+  const [isOpen, setIsOpen] = useState(false);
+  const isLogin = useRecoilValue(isLoginAtom);
 
   useEffect(() => {
-    const user = localStorage.getItem('loginData');
-    const token = localStorage.getItem('access_token');
-
-    if (user === null || token === undefined) {
+    if (!isLogin) {
       setIsOpen(true);
     }
   }, []);
@@ -23,20 +24,27 @@ function Main() {
 
   return (
     <Container>
-      <Modal open={isOpen} onClose={handleClose}>
-        <LoginModal onClose={handleClose} />
-      </Modal>
-
-      <Calendar />
-      <Weather />
+      <LogoutButton />
+      <CalendarWeather>
+        <Modal open={isOpen} onClose={handleClose}>
+          <LoginModal onClose={handleClose} />
+        </Modal>
+        <Calendar />
+        <Weather />
+      </CalendarWeather>
     </Container>
   );
 }
 
 export default Main;
 
-const Container = styled('section')`
+const CalendarWeather = styled('section')`
   display: flex;
   justify-content: space-around;
   min-width: 100vw;
+`;
+
+const Container = styled('section')`
+  display: flex;
+  flex-direction: column;
 `;

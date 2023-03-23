@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import GoogleOauth from 'pages/GoogleOauth';
+import GoogleOauthHandler from '../../apis/oauth/googleOauthHandler';
 
 type Props = {
   onClose: () => void;
@@ -12,7 +12,9 @@ function LoginModal({ onClose }: Props) {
       <TextButtons>
         <div>구글 Login 이 필요합니다</div>
         <Buttons>
-          <GoogleOauth />
+          <button type="button" onClick={GoogleOauthHandler}>
+            Google Login
+          </button>
           <button type="button" onClick={onClose}>
             다음에 Login 하기
           </button>

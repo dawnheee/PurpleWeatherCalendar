@@ -13,8 +13,8 @@ function WeatherCard(props: WeatherInfo) {
 
       <Tempature>
         <p className="real">체감 온도: {realFeelTemp}</p>
-        <p className="min">최고 온도: {minTemp}</p>
-        <p className="max">최저 온도: {maxTemp}</p>
+        <p className="min">최저 온도: {minTemp}</p>
+        <p className="max">최고 온도: {maxTemp}</p>
       </Tempature>
     </WeatherCardContainer>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useRecoilState } from 'recoil';
-import { selectedDateAtom } from 'state/atoms';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { selectedDateAtom, isLoginAtom } from 'state/atoms';
 import { AddButton, CancleButton } from 'components/Calendar/Modal/Buttons';
 import { styled } from '@mui/material/styles';
 import dayjs from 'dayjs';
@@ -11,6 +11,7 @@ import { TitleBox } from '../../share/TextBox';
 function CalendarModal() {
   const [isCreate, setIsCreate] = useState(false);
   const [date, setDate] = useRecoilState(selectedDateAtom);
+  const isLogin = useRecoilValue(isLoginAtom);
 
   const clickCreateOrEventHandler = () => {
     setIsCreate(!isCreate);
@@ -34,13 +35,15 @@ function CalendarModal() {
         </button>
       </DateButton>
       <Contents>{isCreate ? <CreateEvent /> : <ListEvent />}</Contents>
-      <ButtonContainer>
-        {isCreate ? (
-          <AddButton onClick={clickCreateOrEventHandler} />
-        ) : (
-          <CancleButton onClick={clickCreateOrEventHandler} />
-        )}
-      </ButtonContainer>
+      {isLogin && (
+        <ButtonContainer>
+          {isCreate ? (
+            <AddButton onClick={clickCreateOrEventHandler} />
+          ) : (
+            <CancleButton onClick={clickCreateOrEventHandler} />
+          )}
+        </ButtonContainer>
+      )}
     </>
   );
 }

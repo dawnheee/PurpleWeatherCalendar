@@ -1,7 +1,8 @@
 import dayjs from 'dayjs';
 import { GoogleEvents } from 'types';
-import { EventInstance } from '../Eventinstance';
-
+import axios from 'axios';
+// import { EventInstance } from './EventInstance';
+// google 인증 선택 사항(엑세스 토큰 보내는 인스턴스 사용중)
 async function getEventAPI(selectedDateAtom: string): Promise<GoogleEvents> {
   const day = dayjs(selectedDateAtom);
   const timeMin = day.toISOString();
@@ -11,11 +12,18 @@ async function getEventAPI(selectedDateAtom: string): Promise<GoogleEvents> {
     timeMax,
     orderBy: 'startTime',
     singleEvents: true,
+    key: process.env.REACT_APP_GOOGLE_API_KEY,
   };
   try {
-    const response = await EventInstance.get('/', {
-      params,
-    });
+    const response = await axios.get(
+      `https://www.googleapis.com/calendar/v3/calendars/${process.env.REACT_APP_GOOGLE_CALENDAR_ID}/events`,
+      {
+        params,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
     return response.data;
   } catch (error) {
     console.log(error);

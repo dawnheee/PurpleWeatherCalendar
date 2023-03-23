@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Calendar from 'pages/Calendar';
 import Weather from 'pages/Weather';
 import Oauth2callback from 'pages/Oauth2callback';
-import GoogleOauth from 'pages/GoogleOauth';
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
 import { blueGrey } from '@mui/material/colors';
 import Main from 'pages/Main';
@@ -27,7 +26,6 @@ function App() {
       <BrowserRouter>
         <CenteredApp>
           <Routes>
-            <Route path="/oauth" element={<GoogleOauth />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/weather" element={<Weather />} />
             <Route path="/" element={<Main />} />

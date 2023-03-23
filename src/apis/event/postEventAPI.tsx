@@ -1,4 +1,4 @@
-import { EventInstance } from 'apis/Eventinstance';
+import { EventInstance } from './EventInstance';
 import { Event } from '../../types';
 
 function postEventAPI(body: Event) {

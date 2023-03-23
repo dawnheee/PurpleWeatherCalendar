@@ -23,14 +23,13 @@ EventInstance.interceptors.response.use(
     if (error.response?.status === 401 && !originalRequest.retry) {
       originalRequest.retry = true;
       const refreshToken = localStorage.getItem('refresh_token');
-
+      // const clientsecret = process.env.REACT_APP_GOOGLE_CLIENT_SECRET; // 시크릿이 누락되어서 이렇게 넣음
       return axios
         .post(
-          'https://oauth2.googleapis.com/token',
+          `https://oauth2.googleapis.com/token?client_secret=${process.env.REACT_APP_GOOGLE_SECRETE}`,
           {
             grant_type: 'refresh_token',
             client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
-            // client_secret: process.env.REACT_APP_GOOGLE_CLIENT_SECRET,
             refresh_token: refreshToken,
           },
           {
