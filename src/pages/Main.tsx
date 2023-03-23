@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import LoginModal from 'components/share/LoginModal';
-import LogoutButton from 'components/Auth/AuthButton';
+import AuthButton from 'components/Auth/AuthButton';
 import { useRecoilValue } from 'recoil';
 import Calendar from './Calendar';
 import Weather from './Weather';
@@ -16,7 +16,7 @@ function Main() {
     if (!isLogin) {
       setIsOpen(true);
     }
-  }, []);
+  }, [isLogin]);
 
   const handleClose = () => {
     setIsOpen(false);
@@ -24,13 +24,13 @@ function Main() {
 
   return (
     <Container>
-      <LogoutButton />
+      <AuthButton />
       <CalendarWeather>
         <Modal open={isOpen} onClose={handleClose}>
           <LoginModal onClose={handleClose} />
         </Modal>
         <Calendar />
-        <Weather />
+        {/* <Weather /> */}
       </CalendarWeather>
     </Container>
   );

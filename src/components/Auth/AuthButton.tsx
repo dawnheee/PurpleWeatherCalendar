@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import { useRecoilState } from 'recoil';
-import googleLogoutAPI from 'apis/oauth/googleLogoutAPI';
 import { isLoginAtom } from '../../state/atoms';
 import googleOauthHandler from '../../apis/oauth/googleOauthHandler';
 
@@ -9,10 +7,8 @@ function AuthButton() {
   const [isLogin, setIsLogin] = useRecoilState(isLoginAtom);
 
   const logoutHandler = () => {
-    googleLogoutAPI();
     setIsLogin(false);
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('loginData');
+    localStorage.clear();
   };
   const loginHandler = () => {
     googleOauthHandler();
