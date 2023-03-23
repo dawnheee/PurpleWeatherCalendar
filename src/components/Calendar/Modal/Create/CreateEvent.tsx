@@ -10,6 +10,7 @@ import postEventAPI from 'apis/event/postEventAPI';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
+import { useNavigate } from 'react-router-dom';
 import { Event } from '../../../../types';
 
 function CreateEvent() {
@@ -20,6 +21,7 @@ function CreateEvent() {
   const [end, setEnd] = useState<Dayjs | null>(
     dayjs(date).startOf('hour').add(1, 'hour'),
   );
+  const navigate = useNavigate();
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,7 +37,9 @@ function CreateEvent() {
       },
     };
     postEventAPI(body);
+
     isOpen(false);
+    navigate('/');
   };
 
   const handleSummaryChange: React.ChangeEventHandler<HTMLInputElement> = (

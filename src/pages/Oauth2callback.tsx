@@ -32,31 +32,14 @@ function Oauth2callback() {
             },
           )
           .then((response) => {
-            console.log(response);
             const accessToken = response.data.access_token;
             localStorage.setItem('access_token', accessToken);
 
             const refreshToken = response.data.refresh_token;
-            if (response.data.refresh_token !== undefined) {
-              localStorage.setItem('refresh_token', refreshToken);
-            }
+            localStorage.setItem('refresh_token', refreshToken);
 
             setIsLogin(true);
-            axios
-              .get('https://www.googleapis.com/oauth2/v1/userinfo', {
-                headers: {
-                  Authorization: `Bearer ${accessToken}`,
-                },
-              })
-              .then((response) => {
-                localStorage.setItem(
-                  'loginData',
-                  JSON.stringify(response.data),
-                );
-                navigate('/'); // 토큰 저장 후 메인 페이지로 보냄
-                window.location.reload();
-              })
-              .catch((error) => console.log(error));
+            navigate('/');
           })
           .catch((error) => console.log(error));
       }

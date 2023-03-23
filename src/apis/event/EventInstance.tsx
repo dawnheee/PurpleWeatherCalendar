@@ -4,20 +4,11 @@ import axios, {
   AxiosRequestConfig,
   AxiosRequestHeaders,
 } from 'axios';
-// import { useSetRecoilState } from 'recoil';
-// import { isLoginAtom } from '../../state/atoms';
-
-// const setIsLogin = useSetRecoilState(isLoginAtom);
-
-const headers = {
-  Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-  'Content-Type': 'application/json',
-};
 
 const config = {
   baseURL: `https://www.googleapis.com/calendar/v3/calendars/${process.env.REACT_APP_GOOGLE_CALENDAR_ID}/events`,
-  headers,
 };
+
 export const EventInstance = axios.create(config);
 
 interface InternalAxiosRequestConfig<T> extends AxiosRequestConfig<T> {
@@ -54,10 +45,10 @@ EventInstance.interceptors.response.use(
         )
         .then((response) => {
           localStorage.setItem('access_token', response.data.access_token);
-          headers.Authorization = `Bearer ${response.data.access_token}`;
           console.log('토큰 갱신');
 
-          originalRequest.headers.Authorization = `Bearer ${response.data.access_token}`;
+          // headers 대신 config.headers에 새로운 access token 값을 설정
+          EventInstance.defaults.headers.common.Authorization = `Bearer ${response.data.access_token}`;
           console.log('새토큰 장착');
           return EventInstance(originalRequest);
         })
@@ -68,3 +59,8 @@ EventInstance.interceptors.response.use(
     return Promise.resolve();
   },
 );
+
+// 모든 요청에 대해 access token 값을 설정
+EventInstance.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem(
+  'access_token',
+)}`;
