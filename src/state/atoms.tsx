@@ -19,3 +19,8 @@ export const modalAtom = atom<boolean>({
   key: 'isOpen',
   default: false,
 });
+
+export const isLoadingAtom = atom<boolean>({
+  key: 'isLoading',
+  default: false,
+});

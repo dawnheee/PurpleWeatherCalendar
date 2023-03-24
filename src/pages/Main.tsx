@@ -6,12 +6,12 @@ import { useRecoilValue } from 'recoil';
 import Calendar from './Calendar';
 import Weather from './Weather';
 import Modal from '../components/share/Modal';
-import { isLoginAtom } from '../state/atoms';
+import { isLoginAtom, isLoadingAtom } from '../state/atoms';
 
 function Main() {
   const [isOpen, setIsOpen] = useState(false);
   const isLogin = useRecoilValue(isLoginAtom);
-
+  const isLoading = useRecoilValue(isLoadingAtom);
   useEffect(() => {
     if (!isLogin) {
       setIsOpen(true);
@@ -23,16 +23,22 @@ function Main() {
   };
 
   return (
-    <Container>
-      <AuthButton />
-      <CalendarWeather>
-        <Modal open={isOpen} onClose={handleClose}>
-          <LoginModal onClose={handleClose} />
-        </Modal>
-        <Calendar />
-        {/* <Weather /> */}
-      </CalendarWeather>
-    </Container>
+    <>
+      {!isLoading ? (
+        <Container>
+          <AuthButton />
+          <CalendarWeather>
+            <Modal open={isOpen} onClose={handleClose}>
+              <LoginModal onClose={handleClose} />
+            </Modal>
+            <Calendar />
+            {/* <Weather /> */}
+          </CalendarWeather>
+        </Container>
+      ) : (
+        <div>loading...</div>
+      )}{' '}
+    </>
   );
 }
 

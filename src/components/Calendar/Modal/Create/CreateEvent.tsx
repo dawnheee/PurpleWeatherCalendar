@@ -6,12 +6,12 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { selectedDateAtom, modalAtom } from 'state/atoms';
-import postEventAPI from 'apis/event/postEventAPI';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-import { useNavigate } from 'react-router-dom';
+import { PostEventInstance } from 'apis/event/PostEventInstance';
 import { Event } from '../../../../types';
+import { isLoadingAtom } from '../../../../state/atoms';
 
 function CreateEvent() {
   const date = useRecoilValue(selectedDateAtom);
@@ -21,10 +21,11 @@ function CreateEvent() {
   const [end, setEnd] = useState<Dayjs | null>(
     dayjs(date).startOf('hour').add(1, 'hour'),
   );
-  const navigate = useNavigate();
+  const setIsLoading = useSetRecoilState(isLoadingAtom);
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
     const body: Event = {
       summary,
       start: {
@@ -36,10 +37,12 @@ function CreateEvent() {
         timeZone: 'Asia/Seoul',
       },
     };
-    postEventAPI(body);
+    PostEventInstance.post(`/`, body).then((response) => {
+      setIsLoading(false);
+      console.log(response);
+    });
 
     isOpen(false);
-    navigate('/');
   };
 
   const handleSummaryChange: React.ChangeEventHandler<HTMLInputElement> = (
