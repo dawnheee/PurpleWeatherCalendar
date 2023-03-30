@@ -8,7 +8,7 @@ type Props = {
 function LoginModal({ onClose }: Props) {
   return (
     <>
-      <img src="/google.png" alt="rnrmf" />
+      <img src="/asset/google.png" alt="rnrmf" />
       <TextButtons>
         <div>구글 Login 이 필요합니다</div>
         <Buttons>
