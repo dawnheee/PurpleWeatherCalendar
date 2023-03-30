@@ -1,3 +1,4 @@
+import { rejects } from 'assert';
 import axios, {
   AxiosError,
   AxiosResponse,
@@ -57,7 +58,9 @@ PostEventInstance.interceptors.response.use(
           return PostEventInstance(originalRequest);
         })
         .catch((error) => {
-          console.log(error);
+          if (error.response?.status !== 401) {
+            console.log(error);
+          }
         });
     }
     return Promise.resolve();
