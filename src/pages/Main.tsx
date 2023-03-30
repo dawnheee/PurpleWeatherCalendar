@@ -23,22 +23,20 @@ function Main() {
   };
 
   return (
-    <>
-      {!isLoading ? (
-        <Container>
-          <AuthButton />
-          <CalendarWeather>
-            <Modal open={isOpen} onClose={handleClose}>
-              <LoginModal onClose={handleClose} />
-            </Modal>
-            <Calendar />
-            {/* <Weather /> */}
-          </CalendarWeather>
-        </Container>
-      ) : (
-        <div>loading...</div>
-      )}{' '}
-    </>
+    <Container>
+      <AuthButton />
+      <CalendarWeather>
+        <Modal open={isOpen} onClose={handleClose}>
+          <LoginModal onClose={handleClose} />
+        </Modal>
+        {!isLoading ? (
+          <Calendar />
+        ) : (
+          <LoadingComponent>LOADING...</LoadingComponent>
+        )}
+        <Weather />
+      </CalendarWeather>
+    </Container>
   );
 }
 
@@ -48,9 +46,21 @@ const CalendarWeather = styled('section')`
   display: flex;
   justify-content: space-around;
   min-width: 100vw;
+  min-height: 700px;
 `;
 
 const Container = styled('section')`
   display: flex;
   flex-direction: column;
+`;
+
+const LoadingComponent = styled('div')`
+  background-color: #ffffff3a;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
 `;

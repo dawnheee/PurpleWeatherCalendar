@@ -1,8 +1,6 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { GoogleEventItem } from '../../../../types';
 import 'dayjs/locale/ko';
@@ -16,22 +14,27 @@ export default function EventItem({ item }: Props) {
   const start = convertDateForm(item.start.dateTime);
   const end = convertDateForm(item.end.dateTime);
   return (
-    <Card sx={{ minWidth: 275, marginBottom: '16px' }}>
+    <Card
+      sx={{ width: 275, minHeight: 100, marginBottom: '10px' }}
+      onClick={() => {
+        window.open(item.htmlLink, '_blank');
+      }}
+    >
       <CardContent>
-        <Typography variant="h6" component="div">
+        <Typography
+          variant="h6"
+          component="div"
+          fontSize="22px"
+          sx={{ display: 'inline-block', width: '100%' }}
+        >
           {item.summary}
         </Typography>
-        <Typography variant="body2">
-          start {start} AM
+        <Typography variant="body2" fontSize="15px">
+          start {start}
           <br />
-          end {end} PM
+          end {end}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small" component="a" href={item.htmlLink} target="_blank">
-          more
-        </Button>
-      </CardActions>
     </Card>
   );
 }

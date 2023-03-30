@@ -27,4 +27,5 @@ export default Calendar;
 
 const Container = styled('section')`
   width: 80%;
+  min-height: 700px;
 `;

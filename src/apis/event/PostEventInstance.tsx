@@ -17,6 +17,7 @@ const config = {
 export const PostEventInstance = axios.create(config);
 
 //
+
 interface InternalAxiosRequestConfig<T> extends AxiosRequestConfig<T> {
   retry?: boolean;
   headers: AxiosRequestHeaders;
@@ -49,10 +50,9 @@ PostEventInstance.interceptors.response.use(
         )
         .then((response) => {
           localStorage.setItem('access_token', response.data.access_token);
-          console.log('토큰 갱신');
+          PostEventInstance.defaults.headers.Authorization = `Bearer ${response.data.access_token}`;
 
           originalRequest.headers.Authorization = `Bearer ${response.data.access_token}`;
-          console.log('새토큰 장착');
 
           return PostEventInstance(originalRequest);
         })

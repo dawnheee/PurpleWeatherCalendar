@@ -2,7 +2,7 @@ import Icon from 'components/Weather/Icon';
 import styled from '@emotion/styled';
 import { WeatherInfo } from '../../types';
 
-function WeatherCard(props: WeatherInfo) {
+function Weatherdata(props: WeatherInfo) {
   const { nowTemp, realFeelTemp, iconNum, describe, maxTemp, minTemp } = props;
 
   return (
@@ -20,7 +20,7 @@ function WeatherCard(props: WeatherInfo) {
   );
 }
 
-export default WeatherCard;
+export default Weatherdata;
 
 const WeatherCardContainer = styled('section')`
   display: flex;

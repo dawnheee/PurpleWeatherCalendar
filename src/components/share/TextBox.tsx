@@ -9,10 +9,11 @@ export function TitleBox({ text }: { text: string }) {
 }
 
 const Section = styled('section')({
-  backgroundColor: '#AAB7F8',
+  backgroundColor: '#748af8',
   width: '200px',
   borderRadius: '20px',
   color: 'white',
+  fontSize: '20px',
   height: '40px',
   display: 'flex',
   justifyContent: 'center',

@@ -39,7 +39,6 @@ function CreateEvent() {
     };
     PostEventInstance.post(`/`, body).then((response) => {
       setIsLoading(false);
-      console.log(response);
     });
 
     isOpen(false);
@@ -79,7 +78,7 @@ function CreateEvent() {
         </DemoContainer>
       </LocalizationProvider>
       <StyledButton type="submit" variant="contained" color="info">
-        등록
+        Add Event
       </StyledButton>
     </Form>
   );
@@ -88,12 +87,19 @@ function CreateEvent() {
 export default CreateEvent;
 
 const StyledButton = styled(Button)({
-  marginTop: '7px',
+  marginTop: '20px',
+  backgroundColor: '#5971ec',
+  boxShadow: 'none',
+  fontWeight: '500',
+  fontSize: '20px',
+  '&:hover': {
+    backgroundColor: 'tomato',
+    boxShadow: 'none',
+  },
 });
 
 const Form = styled('form')({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-around',
-  height: '70%',
 });

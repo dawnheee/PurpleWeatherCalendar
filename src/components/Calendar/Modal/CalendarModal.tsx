@@ -4,6 +4,7 @@ import { selectedDateAtom, isLoginAtom } from 'state/atoms';
 import { AddButton, CancleButton } from 'components/Calendar/Modal/Buttons';
 import { styled } from '@mui/material/styles';
 import dayjs from 'dayjs';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import CreateEvent from './Create/CreateEvent';
 import ListEvent from './List/ListEvent';
 import { TitleBox } from '../../share/TextBox';
@@ -27,11 +28,11 @@ function CalendarModal() {
     <>
       <DateButton>
         <button type="button" onClick={prevDate}>
-          전
+          <FaArrowLeft color="#5e86ffc5" />
         </button>
         <TitleBox text={date} />
         <button type="button" onClick={nextDate}>
-          ≫
+          <FaArrowRight color="#5e86ffc5" />
         </button>
       </DateButton>
       <Contents>{isCreate ? <CreateEvent /> : <ListEvent />}</Contents>
@@ -52,6 +53,12 @@ export default CalendarModal;
 
 const DateButton = styled('section')`
   display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    border: 0;
+    background-color: transparent;
+  }
 `;
 const ButtonContainer = styled('section')`
   display: flex;
