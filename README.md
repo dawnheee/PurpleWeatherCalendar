@@ -10,16 +10,8 @@
 
 ### **Stacks**
 
-<img src="https://img.shields.io/badge/Typescript-02569B?style=for-the-badge&logo=typescript&logoColor=white">
-<img src="https://img.shields.io/badge/react-blue?style=for-the-badge&logo=react&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-<img src="https://img.shields.io/badge/axios-purple?style=for-the-badge&logo=axios&logoColor=white">
-<img src="https://img.shields.io/badge/recoil-black?style=for-the-badge&logo=recoil&logoColor=white">
-<img src="https://img.shields.io/badge/mui-007bf7?style=for-the-badge&logo=mui&logoColor=white">
-<img src="https://img.shields.io/badge/emotion-hotpink?style=for-the-badge&logo=emotion&logoColor=white">
-<img src="https://img.shields.io/badge/eslint-7C7CEA?style=for-the-badge&logo=eslint&logoColor=white">
-<img src="https://img.shields.io/badge/prettier-1F313A?style=for-the-badge&logo=prettier&logoColor=white">
+<img src="https://img.shields.io/badge/Typescript-02569B?style=for-the-badge&logo=typescript&logoColor=white"><img src="https://img.shields.io/badge/react-blue?style=for-the-badge&logo=react&logoColor=white"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"><img src="https://img.shields.io/badge/axios-purple?style=for-the-badge&logo=axios&logoColor=white"><img src="https://img.shields.io/badge/recoil-black?style=for-the-badge&logo=recoil&logoColor=white"><img src="https://img.shields.io/badge/mui-007bf7?style=for-the-badge&logo=mui&logoColor=white"><img src="https://img.shields.io/badge/emotion-hotpink?style=for-the-badge&logo=emotion&logoColor=white"><img src="https://img.shields.io/badge/eslint-7C7CEA?style=for-the-badge&logo=eslint&logoColor=white"><img src="https://img.shields.io/badge/prettier-1F313A?style=for-the-badge&logo=prettier&logoColor=white">
 
 <br/>
 
@@ -234,8 +226,10 @@ npm start
 
 #### **📁 디렉토리 구성**
 
-초기에 mobile, desktop view를 함께 구현하기 위하여 저장소의 pages 폴더에 Weather, Calendar, Main 페이지 파일이 함께 저장되어 있습니다. 분기는 나눠두지 않았습니다.
+초기에 mobile, desktop view를 함께 구현하기 위하여 저장소의 pages 폴더에 Weather, Calendar, Main 페이지 파일이 함께 저장되어 있습니다. 분기는 나눠두지 않았습니다. 배포 환경에서도 기능하도록 수정하고 mobile view를 추가할 예정입니다.
 
 #### **😈 에러**
 
-로그인 후 `새로고침하지 않고`, 첫 '이벤트 insert 요청' 시 token이 null로 요청되는 에러가 있습니다. axios interceptor로 재요청 하고 있습니다.
+로그인 후 `새로고침하지 않고`, 첫 '이벤트 insert 요청' 시 token이 null로 요청되는 에러가 있습니다. 때문에 axios interceptor로 재요청 하고 있습니다.
+
+`혹시 부족한 부분이 있다면, 말씀해주시면 감사하겠습니다 🙋`
