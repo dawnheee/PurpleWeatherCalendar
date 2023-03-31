@@ -1,10 +1,3 @@
-export interface User {
-  email: string;
-  name?: string;
-  password: string;
-  token?: string;
-}
-
 export interface WeatherInfo {
   nowTemp?: NowTemp;
   realFeelTemp?: string;

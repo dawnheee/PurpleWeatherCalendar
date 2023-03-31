@@ -22,6 +22,7 @@ function ModalComponent(props: ModalProps) {
           height: 500,
           p: 2,
           position: 'relative',
+          borderRadius: '15px',
         }}
       >
         {children}

@@ -12,9 +12,9 @@ function Weatherdata(props: WeatherInfo) {
       <p className="describe">{describe}</p>
 
       <Tempature>
-        <p className="real">체감 온도: {realFeelTemp}</p>
-        <p className="min">최저 온도: {minTemp}</p>
-        <p className="max">최고 온도: {maxTemp}</p>
+        <p className="real temp">체감 {realFeelTemp} °C</p>
+        <p className="min temp">최저 {minTemp} °C</p>
+        <p className="max temp">최고 {maxTemp} °C</p>
       </Tempature>
     </WeatherCardContainer>
   );
@@ -29,12 +29,16 @@ const WeatherCardContainer = styled('section')`
   width: 100%;
   height: 60%;
   .now {
-    font-size: 40px;
+    font-size: 45px;
     position: relative;
     margin-top: 10px;
   }
   .describe {
     margin-top: -20px;
+    font-size: 25px;
+  }
+  .temp {
+    font-size: 20px;
   }
 `;
 

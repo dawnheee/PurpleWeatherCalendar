@@ -20,4 +20,5 @@ export default Clothes;
 
 const Recommandation = styled('div')`
   max-width: 180px;
+  font-size: 18px;
 `;

@@ -15,13 +15,13 @@ const useClothes = (nowTemp: NowTemp | undefined): string => {
       return '블라우스, 긴팔 티, 면바지';
     }
     if (nowTemp >= 17) {
-      return '얇은 가디건, 니트, 맨투맨, 후드, 긴 바지 ';
+      return '가디건, 니트, 맨투맨, 후드, 긴 바지 ';
     }
     if (nowTemp >= 12) {
       return '자켓, 가디건, 청자켓, 스타킹, 청바지';
     }
     if (nowTemp >= 9) {
-      return '트렌치 코트, 야상, 점퍼, 스타킹, 기모바지';
+      return '트렌치코트, 점퍼, 스타킹, 기모바지';
     }
     if (nowTemp >= 5) {
       return '울 코트, 내복, 기모';

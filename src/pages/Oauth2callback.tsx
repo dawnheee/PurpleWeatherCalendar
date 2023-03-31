@@ -34,7 +34,6 @@ function Oauth2callback() {
             },
           )
           .then((response) => {
-            console.log(response);
             const accessToken = response.data.access_token;
             localStorage.setItem('access_token', accessToken);
 

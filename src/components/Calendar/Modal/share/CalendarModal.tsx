@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { selectedDateAtom, isLoginAtom } from 'state/atoms';
-import { AddButton, CancleButton } from 'components/Calendar/Modal/Buttons';
+import {
+  AddButton,
+  CancleButton,
+} from 'components/Calendar/Modal/share/Buttons';
 import { styled } from '@mui/material/styles';
 import dayjs from 'dayjs';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import CreateEvent from './Create/CreateEvent';
-import ListEvent from './List/ListEvent';
-import { TitleBox } from '../../share/TextBox';
+import CreateEvent from '../Create/CreateEvent';
+import ListEvent from '../List/ListEvent';
+import { TitleBox } from './TextBox';
 
 function CalendarModal() {
   const [isCreate, setIsCreate] = useState(false);
@@ -55,6 +58,7 @@ const DateButton = styled('section')`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 15px;
   button {
     border: 0;
     background-color: transparent;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-import LoginModal from 'components/share/LoginModal';
+import LoginModal from 'components/Auth/LoginModal';
 import AuthButton from 'components/Auth/AuthButton';
 import { useRecoilValue } from 'recoil';
 import Calendar from './Calendar';
