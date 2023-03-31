@@ -18,7 +18,7 @@ const useClothes = (nowTemp: NowTemp | undefined): string => {
       return '가디건, 니트, 맨투맨, 후드, 긴 바지 ';
     }
     if (nowTemp >= 12) {
-      return '자켓, 가디건, 청자켓, 스타킹, 청바지';
+      return '자켓, 가디건, 스타킹, 청바지';
     }
     if (nowTemp >= 9) {
       return '트렌치코트, 점퍼, 스타킹, 기모바지';
