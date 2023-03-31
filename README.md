@@ -93,7 +93,7 @@ npm install
 나의 google calendar를 이용하기 위해 아래와 같은 설정이 필요합니다.
 <br/>
 
-### **`2.2.1 구글 프로젝트 만들기`**
+### **2.2.1 구글 프로젝트 만들기**
 
 - [google cloud 만들기](https://cloud.google.com/?hl=ko) 에서 프로젝트 만들기
 
@@ -113,7 +113,7 @@ https://www.googleapis.com/auth/calendar.events
 
 <br/>
 
-### **`2.2.2 환경 변수 얻기`**
+### **2.2.2 환경 변수 얻기**
 
 자신의 google calendar를 연동하고 앱을 사용하기 위해서는 다음과 같은 환경 변수들이 필요합니다.
 google cloud에서 프로젝트를 만들고 google clendar api를 사용합니다.
@@ -194,7 +194,7 @@ https://console.cloud.google.com/apis/dashboard
 
 <br/>
 
-### **`2.2.3 .env파일 만들기`**
+### **2.2.3 .env파일 만들기**
 
 루트 경로에 `.env` 파일을 생성합니다.
 
@@ -210,7 +210,7 @@ REACT_APP_WEATHER_CITY_KEY=city key                 //⑥
 
 위의 과정을 통하여 얻은 key들을 ①에서 ⑥까지의 변수에 할당합니다.
 
-### **`2.2.4. 앱 실행`**
+### **2.2.4. 앱 실행**
 
 아래 명령어를 입력하여 앱을 실행 합니다.
 
