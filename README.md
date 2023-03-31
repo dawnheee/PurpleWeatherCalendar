@@ -4,6 +4,10 @@
 지정한 Google calendar와 연동되는 캘린더와 현재 날씨 정보를 제공하는 Caledar App 입니다. google cloud에서 제공하는 key를 사용하여 로컬 환경에서 이용할 수 있습니다. API key 등 필요한 변수들을 얻는 방법은 [2.설치 및 설정 가이드](#2-설치-및-설정-가이드) 를 참고해주세요.
 <br/>
 
+### **기능 시연**
+
+![모든기능능](https://user-images.githubusercontent.com/99721472/229110370-a5b7cddf-3a9c-4903-b78d-4cfb7b15ce63.gif)
+
 ### **Stacks**
 
 <img src="https://img.shields.io/badge/Typescript-02569B?style=for-the-badge&logo=typescript&logoColor=white">
@@ -67,6 +71,10 @@ Google Calendar에서 작성한 일정을 확인할 수 있습니다.
 
 현재 날씨 정보와 아이콘, 일 최저 최고 기온, 현재 기온에 따른 옷차림을 추천합니다.
 
+### 1.6 **모든 기능**
+
+![모든기능능](https://user-images.githubusercontent.com/99721472/229110370-a5b7cddf-3a9c-4903-b78d-4cfb7b15ce63.gif)
+
 <br />
 <br />
 <br />
@@ -105,10 +113,10 @@ npm install
 - 아래 범위 추가
 
 ```
- https://www.googleapis.com/auth/userinfo.email
-  https://www.googleapis.com/auth/calendar.readonly
-  https://www.googleapis.com/auth/calendar
-  https://www.googleapis.com/auth/calendar.events
+https://www.googleapis.com/auth/userinfo.email
+https://www.googleapis.com/auth/calendar.readonly
+https://www.googleapis.com/auth/calendar
+https://www.googleapis.com/auth/calendar.events
 ```
 
 <br/>
@@ -131,8 +139,7 @@ google cloud에서 프로젝트를 만들고 google clendar api를 사용합니�
 
 ④ google client secret
 <br/>
-
----
+<br/>
 
 <br/>
 
@@ -178,7 +185,8 @@ https://console.cloud.google.com/apis/dashboard
 
 현재 온도, 현재 날씨를 표현하는 아이콘 번호, 체감온도, `일 최저 기온, 일 최고 기온`을 사용하기 위하여 open API를 제공하는 [accuwaether](https://developer.accuweather.com/)를 사용하였습니다.
 
----
+<br/>
+<br/>
 
 **⑤ weather API key 얻기**
 

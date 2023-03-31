@@ -41,7 +41,7 @@ const CalendarContainer = styled('div')`
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 15px;
-  height: auto;
+  min-height: 700px;
   .fc-toolbar-title {
     //연 월
     color: white;

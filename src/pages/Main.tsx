@@ -62,4 +62,5 @@ const LoadingComponent = styled('div')`
   color: white;
   font-size: 30px;
   font-weight: 600;
+  height: 750px;
 `;
