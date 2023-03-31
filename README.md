@@ -1,7 +1,7 @@
 # ☔ Purple Weather Calendar 소개
 
 ![Untitled](https://user-images.githubusercontent.com/99721472/229025978-80023826-ce07-4d1c-a771-6a3012b5ffdf.png)
-지정한 Google calendar와 연동되는 캘린더와 현재 날씨 정보를 제공하는 Caledar App 입니다. google cloud에서 제공하는 key를 사용하여 로컬 환경에서 이용할 수 있습니다. API key 등 필요한 변수들을 얻는 방법은 `2 설치 및 설정 가이드` 를 참고해주세요.
+지정한 Google calendar와 연동되는 캘린더와 현재 날씨 정보를 제공하는 Caledar App 입니다. google cloud에서 제공하는 key를 사용하여 로컬 환경에서 이용할 수 있습니다. API key 등 필요한 변수들을 얻는 방법은 [2.설치 및 설정 가이드](#2-설치-및-설정-가이드) 를 참고해주세요.
 <br/>
 
 ### **기능 시연**
@@ -22,10 +22,18 @@
 <img src="https://img.shields.io/badge/prettier-1F313A?style=for-the-badge&logo=prettier&logoColor=white">
 
 <br/>
+
+### **관련 문서**
+
+- [Google OAuth 로그인 구현 방법](https://caramel-sail-b9f.notion.site/google-Oauth-a27decfb39494d05b6b7348fe3df793f)
+
+- fullcalendar 사용 방법(예정)
+- 날씨 컴포넌트 구현 과정(예정)
+
 <br/>
 <br/>
 
-# 1 기능 가이드
+# 1 기능 가이드 📖
 
 ### 1.1 **Google OAuth 로그인**
 
@@ -71,7 +79,7 @@ Google Calendar에서 작성한 일정을 확인할 수 있습니다.
 <br />
 <br />
 
-# 2 설치 및 설정 가이드
+# 2 설치 및 설정 가이드 📖
 
 ## 2.1 설치 가이드
 
@@ -217,3 +225,17 @@ REACT_APP_WEATHER_CITY_KEY=city key                 //⑥
 ```
 npm start
 ```
+
+---
+
+<br/>
+
+### **+ 진행 상황**
+
+#### **📁 디렉토리 구성**
+
+초기에 mobile, desktop view를 함께 구현하기 위하여 저장소의 pages 폴더에 Weather, Calendar, Main 페이지 파일이 함께 저장되어 있습니다. 분기는 나눠두지 않았습니다.
+
+#### **😈 에러**
+
+로그인 후 `새로고침하지 않고`, 첫 '이벤트 insert 요청' 시 token이 null로 요청되는 에러가 있습니다. axios interceptor로 재요청 하고 있습니다.
