@@ -4,10 +4,6 @@
 지정한 Google calendar와 연동되는 캘린더와 현재 날씨 정보를 제공하는 Caledar App 입니다. google cloud에서 제공하는 key를 사용하여 로컬 환경에서 이용할 수 있습니다. API key 등 필요한 변수들을 얻는 방법은 [2.설치 및 설정 가이드](#2-설치-및-설정-가이드) 를 참고해주세요.
 <br/>
 
-### **기능 시연**
-
-![모든기능](https://user-images.githubusercontent.com/99721472/229092748-109d1694-172d-4943-be43-365e4fde708c.gif)
-
 ### **Stacks**
 
 <img src="https://img.shields.io/badge/Typescript-02569B?style=for-the-badge&logo=typescript&logoColor=white">
@@ -70,10 +66,6 @@ Google Calendar에서 작성한 일정을 확인할 수 있습니다.
 ![지금날씨](https://user-images.githubusercontent.com/99721472/229092725-0dc1efb6-6f33-48c4-a3cc-51669e3c4fcd.gif)
 
 현재 날씨 정보와 아이콘, 일 최저 최고 기온, 현재 기온에 따른 옷차림을 추천합니다.
-
-### 1.6 **모든 기능**
-
-![모든기능](https://user-images.githubusercontent.com/99721472/229092748-109d1694-172d-4943-be43-365e4fde708c.gif)
 
 <br />
 <br />
