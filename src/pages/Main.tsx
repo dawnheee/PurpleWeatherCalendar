@@ -42,16 +42,15 @@ function Main() {
 
 export default Main;
 
-const CalendarWeather = styled('section')`
-  display: flex;
-  justify-content: space-around;
-  min-width: 100vw;
-  min-height: 700px;
-`;
-
 const Container = styled('section')`
   display: flex;
   flex-direction: column;
+`;
+const CalendarWeather = styled('section')`
+  display: flex;
+  justify-content: space-around;
+  min-width: 90vw;
+  /* min-height: 700px; */
 `;
 
 const LoadingComponent = styled('div')`
