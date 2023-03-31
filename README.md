@@ -13,22 +13,16 @@
 <br/>
 <br/>
 
-# 사용 가이드
+# 1 기능 가이드
 
-앱을 실행 합니다.
-
-```
-npm start
-```
-
-### **Google OAuth 로그인**
+### 1.1 **Google OAuth 로그인**
 
 지정한 `google calendar ID`의 calendar에 새로운 일정을 추가하기 위해서는 구글 OAuth 로그인이 필요합니다.
 ![로그인](https://user-images.githubusercontent.com/99721472/229087295-235ed9ea-2723-4365-908f-af68c0a20e27.gif)
 
 <br/>
 
-### **Google Calendar 일정 확인**
+### 1.2 **Google Calendar 일정 확인**
 
 ![캘린더read2](https://user-images.githubusercontent.com/99721472/229093553-9d5064d8-a5da-451e-ab2b-abf976a88529.gif)
 
@@ -37,26 +31,26 @@ Google Calendar에서 작성한 일정을 확인할 수 있습니다.
 
 <br/>
 
-### **Google calendar 일정 페이지로 이동**
+### 1.3 **Google calendar 일정 페이지로 이동**
 
 ![calendar구글링크](https://user-images.githubusercontent.com/99721472/229092677-803e6d08-02cb-487b-8fcd-6087e7d25080.gif)
 이벤트를 누르면 해당 이벤트의 google calendar 페이로 이동합니다.
 
 <br/>
 
-### **새 이벤트 만들기**
+### 1.4 **새 이벤트 만들기**
 
 ![캘린더작성](https://user-images.githubusercontent.com/99721472/229092707-15eabc7a-d228-4d4f-a260-1d955834bdef.gif)
 날짜, 시간을 지정하여 이벤트를 작성합니다. 작성한 이벤트는 구글 캘린더에 실시간으로 반영됩니다.
 
 <br/>
 
-### **날씨와 옷차림 정보**
+### 1.5 **날씨와 옷차림 정보**
 
 ![지금날씨](https://user-images.githubusercontent.com/99721472/229092725-0dc1efb6-6f33-48c4-a3cc-51669e3c4fcd.gif)
 현재 날씨 정보와 아이콘, 일 최저 최고 기온, 현재 기온에 따른 옷차림을 추천합니다.
 
-## 모든 기능
+### 1.6 **모든 기능**
 
 ![모든기능](https://user-images.githubusercontent.com/99721472/229092748-109d1694-172d-4943-be43-365e4fde708c.gif)
 
@@ -64,9 +58,9 @@ Google Calendar에서 작성한 일정을 확인할 수 있습니다.
 <br />
 <br />
 
-# 설치 및 설정 가이드
+# 2 설치 및 설정 가이드
 
-## 설치 가이드
+## 2.1 설치 가이드
 
 설치하기 위해서는 다음 사항이 필요합니다.
 
@@ -81,12 +75,12 @@ npm install
 <br/>
 <br/>
 
-## 설정 가이드
+## 2.2 설정 가이드
 
 나의 google calendar를 이용하기 위해 아래와 같은 설정이 필요합니다.
 <br/>
 
-### **`구글 프로젝트 만들기`**
+### **`2.2.1 구글 프로젝트 만들기`**
 
 - [google cloud 만들기](https://cloud.google.com/?hl=ko) 에서 프로젝트 만들기
 
@@ -106,34 +100,30 @@ npm install
 
 <br/>
 
-### **`환경 변수 얻기`**
+### **`2.2.2 환경 변수 얻기`**
 
 자신의 google calendar를 연동하고 앱을 사용하기 위해서는 다음과 같은 환경 변수들이 필요합니다.
 google cloud에서 프로젝트를 만들고 google clendar api를 사용합니다.
-루트 경로에 `.env` 파일을 만들고 아래 과정을 통해 얻은 환경변수들을 저장합니다.
-
-```
-// .env 파일
-REACT_APP_GOOGLE_API_KEY=google API Key              //1
-REACT_APP_GOOGLE_CALENDAR_ID=google calendar ID      //2
-REACT_APP_GOOGLE_CLIENT_ID=google client ID          //3
-REACT_APP_GOOGLE_SECRETE=google client secret        //4
-REACT_APP_WEATHER_API_KEY=weather API key            //5
-REACT_APP_WEATHER_CITY_KEY=city key                  //6
-```
+루트 경로에 `.env` 파일을 만들고 아래 과정을 통해 얻은 환경변수들을 저장합니다. `.env` 파일 설정 방법은 아래 2.2.3 절을 참고합니다.
 
 <br/>
 
-### **필요한 google 환경변수 목록**
+### **2.2.2.1 필요한 google 환경변수 목록**
 
-1. google API Key
-2. google calendar ID
-3. google client ID
-4. google client secret
+① google API Key
+
+② google calendar ID
+
+③ google client ID
+
+④ google client secret
+<br/>
+
+---
 
 <br/>
 
-**1. google API Key**
+**① google API Key 얻기**
 
 ```
 구글 클라우드 콘솔
@@ -143,13 +133,13 @@ https://console.cloud.google.com/apis/dashboard
 - 사용자 인증 정보에서 'API 키' 생성
 ```
 
-**2. google calendar ID**
+**② google calendar ID 얻기**
 
 ```
 구글캘린더 - 내 캘린더 - 사용할 캘린더 '설정' - 캘린더 ID 저장해두기
 ```
 
-**3. google client ID** / **4. google client secret**
+**③ google client ID 얻기** / **④ google client secret 얻기**
 
 ```
 구글 클라우드 콘솔
@@ -167,25 +157,50 @@ https://console.cloud.google.com/apis/dashboard
 <br/>
 <br/>
 
-### **필요한 AccuWeather API 환경변수 목록**
+### **2.2.2.2 필요한 AccuWeather API 환경변수 목록**
 
-5. weather API key
-6. city key
+⑤ weather API key
+
+⑥ city key
 
 현재 온도, 현재 날씨를 표현하는 아이콘 번호, 체감온도, `일 최저 기온, 일 최고 기온`을 사용하기 위하여 open API를 제공하는 [accuwaether](https://developer.accuweather.com/)를 사용하였습니다.
 
-**5. weather API key**
+---
+
+**⑤ weather API key 얻기**
 
 - 회원가입
 - [My Apps](https://developer.accuweather.com/user/me/apps) - Add a new App
 - 새로운 앱 생성
 - API key 저장해두기
 
-**6. city key**
+**⑥ city key 얻기**
 
 - [city search API](https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities/search)를 사용하여 `key` 값 저장해두기 ([location key 찾기 참고](https://devje.tistory.com/m/105)
   )
 
 <br/>
 
-위의 과정을 통해 저장한 key들을 `.env` 파일에 환경변수로 설정한 후, 터미널에 `npm start` 명령어를 입력합니다.
+### **`2.2.3 .env파일 만들기`**
+
+루트 경로에 `.env` 파일을 생성합니다.
+
+```
+// .env 파일
+REACT_APP_GOOGLE_API_KEY=google API Key             //①
+REACT_APP_GOOGLE_CALENDAR_ID=google calendar ID     //②
+REACT_APP_GOOGLE_CLIENT_ID=google client ID         //③
+REACT_APP_GOOGLE_SECRETE=google client secret       //④
+REACT_APP_WEATHER_API_KEY=weather API key           //⑤
+REACT_APP_WEATHER_CITY_KEY=city key                 //⑥
+```
+
+위의 과정을 통하여 얻은 key들을 ①에서 ⑥까지의 변수에 할당합니다.
+
+### **`2.2.4. 앱 실행`**
+
+아래 명령어를 입력하여 앱을 실행 합니다.
+
+```
+npm start
+```
