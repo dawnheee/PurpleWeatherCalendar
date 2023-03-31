@@ -10,8 +10,8 @@
 
 ### **Stacks**
 
-<img src="https://img.shields.io/badge/Typescript-02569B?style=for-the-badge&logo=typescript&logoColor=white"><img src="https://img.shields.io/badge/react-blue?style=for-the-badge&logo=react&logoColor=white"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"><img src="https://img.shields.io/badge/axios-purple?style=for-the-badge&logo=axios&logoColor=white"><img src="https://img.shields.io/badge/recoil-black?style=for-the-badge&logo=recoil&logoColor=white"><img src="https://img.shields.io/badge/mui-007bf7?style=for-the-badge&logo=mui&logoColor=white"><img src="https://img.shields.io/badge/emotion-hotpink?style=for-the-badge&logo=emotion&logoColor=white"><img src="https://img.shields.io/badge/eslint-7C7CEA?style=for-the-badge&logo=eslint&logoColor=white"><img src="https://img.shields.io/badge/prettier-1F313A?style=for-the-badge&logo=prettier&logoColor=white">
+<img src="https://img.shields.io/badge/Typescript-02569B?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/react-blue?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<br/><img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/axios-purple?style=for-the-badge&logo=axios&logoColor=white"> <img src="https://img.shields.io/badge/recoil-black?style=for-the-badge&logo=recoil&logoColor=white"> <img src="https://img.shields.io/badge/mui-007bf7?style=for-the-badge&logo=mui&logoColor=white"><br/><img src="https://img.shields.io/badge/emotion-hotpink?style=for-the-badge&logo=emotion&logoColor=white"> <img src="https://img.shields.io/badge/eslint-7C7CEA?style=for-the-badge&logo=eslint&logoColor=white"><img src="https://img.shields.io/badge/prettier-1F313A?style=for-the-badge&logo=prettier&logoColor=white">
 
 <br/>
 
