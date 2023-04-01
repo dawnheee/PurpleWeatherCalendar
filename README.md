@@ -38,9 +38,6 @@
 
 ![캘린더read2](https://user-images.githubusercontent.com/99721472/229093553-9d5064d8-a5da-451e-ab2b-abf976a88529.gif)
 
-Google Calendar에서 작성한 일정을 확인할 수 있습니다.
-![캘린더구글에서작성](https://user-images.githubusercontent.com/99721472/229092689-f5baf16e-38d4-4099-a36a-d4fe3f5fe22b.gif)
-
 <br/>
 
 ### 1.3 **Google calendar 일정 페이지로 이동**
