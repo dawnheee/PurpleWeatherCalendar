@@ -225,8 +225,3 @@ npm start
 
 초기에 mobile, desktop view를 함께 구현하기 위하여 저장소의 pages 폴더에 Weather, Calendar, Main 페이지 파일이 함께 저장되어 있습니다. 분기는 나눠두지 않았습니다. 배포 환경에서도 기능하도록 수정하고 mobile view를 추가할 예정입니다.
 
-#### **😈 에러**
-
-로그인 후 `새로고침하지 않고`, 첫 '이벤트 insert 요청' 시 token이 null로 요청되는 에러가 있습니다. 때문에 axios interceptor로 재요청 하고 있습니다.
-
-`혹시 부족한 부분이 있다면, 말씀해주시면 감사하겠습니다 🙋`
